@@ -15,6 +15,7 @@ class Gladiador {
   method defensaDelGladiador() 
 
   method crearGrupoCon(otroGladiador)
+  method curar() {vidaInicialDelGladiador = 100}
 }
 class Mirmillon inherits Gladiador {
   var armaInicial
