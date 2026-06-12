@@ -21,9 +21,9 @@ class ArmasContundentes inherits Armas{
   override method dañoDeAtaque() = pesoDeArma
 }
 
-// object casco { // Pensar
-//   method armaduraDada() = 10
-// }
+object casco { // Pensar
+  method armaduraDada() = 10
+}
 // object escudo { // Pensar
 //   method destrezaDada() = 5 + gladiador.destreza() * 0.1 
 // }
@@ -33,11 +33,20 @@ class Gladiadores {
   method fuerzaDelGladiador()
   method destrezaDelGladiador()
   
-
+  method armaActual()
   method atacar()
   method defenderse() 
 }
 class Mirmillones inherits Gladiadores {
+  var armaInicial
+  method nuevaArma(arma) {armaInicial = arma}
+  override method armaActual() = armaInicial
+
+  const armaduraInicial = casco.armaduraDada()
+  method darArmaduraAlGladiador() = armaduraInicial
+
+  method tieneArmadura() = armaduraInicial > 0
+
   var fuerzaDelGladiador 
   method fuerzaDeGladiador(fuerza) {fuerzaDelGladiador = fuerza}
   override method fuerzaDelGladiador() = fuerzaDelGladiador
@@ -45,6 +54,8 @@ class Mirmillones inherits Gladiadores {
   override method destrezaDelGladiador() = 15
 
   method cambiarDeArmadura() // Pensar
+
+  override method atacar() = if(self.tieneArmadura()) (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - (armaduraInicial + vidaInicialDelGladiador) else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
 }
 class Dimachaerus inherits Gladiadores{
   var destrezaDelGladiador
