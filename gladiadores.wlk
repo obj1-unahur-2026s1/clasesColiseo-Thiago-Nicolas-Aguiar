@@ -51,6 +51,7 @@ class Dimachaerus inherits Gladiador{
 
   const armas = []
     method nuevaArma(armaNueva) = armas.add(armaNueva)
+    method quitarArma(arma) = armas.remove(arma)
     method fuerzaDeLasArmas() = armas.sum( {a => a.dañoDeArma() } )
 
   var destrezaDelGladiador
