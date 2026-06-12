@@ -53,9 +53,10 @@ class Mirmillones inherits Gladiadores {
 
   override method destrezaDelGladiador() = 15
 
-  method cambiarDeArmadura() // Pensar
+  method cambiarDeArmadura() // Pensar otra vez
 
-  override method atacar() = if(self.tieneArmadura()) (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - (armaduraInicial + vidaInicialDelGladiador) else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
+  override method atacar() = if(self.tieneArmadura()) (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - (armaduraInicial + vidaInicialDelGladiador) 
+                            else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
 }
 class Dimachaerus inherits Gladiadores{
   var destrezaDelGladiador
