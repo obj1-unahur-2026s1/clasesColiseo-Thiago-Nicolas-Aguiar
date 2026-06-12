@@ -20,6 +20,6 @@ object casco {
   method armaduraDada() = 10
 }
 object escudo { 
-  method destrezaDada(gladiador) = 5 + gladiador.destreza() * 0.1 
+  method destrezaDada(gladiador) = 5 + gladiador.destrezaDelGladiador() * 0.1 
 }
 
