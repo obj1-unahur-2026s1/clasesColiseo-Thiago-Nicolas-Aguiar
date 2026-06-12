@@ -13,6 +13,7 @@ class ArmaDeFilo {
 class ArmaContundentes  {
   var pesoDeArma
   method pesoDelArma(pesoArma) {pesoDeArma = pesoArma}
+  method dañodeArma() = pesoDeArma
 }
 
 object casco {

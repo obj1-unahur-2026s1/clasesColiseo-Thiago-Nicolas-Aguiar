@@ -31,6 +31,11 @@ class Mirmillon inherits Gladiador {
                             else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
 }
 class Dimachaerus inherits Gladiador{
+
+  const armas = []
+    method nuevaArma(armaNueva) = armas.add(armaNueva)
+    method fuerzaDeLasArmas() = armas.sum( {a => a.dañoDeArma() } )
+
   var destrezaDelGladiador
   method destrazaDeGladiador(destreza) {destrezaDelGladiador = destreza} 
   override method destrezaDelGladiador() = destrezaDelGladiador
@@ -38,6 +43,6 @@ class Dimachaerus inherits Gladiador{
   override method fuerzaDelGladiador() = 10
     method tieneArmadura(gladiador) = gladiador.armaduraActual() > 0
   
-  override method atacar(gladiador) = if(self.tieneArmadura(gladiador)) (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - (gladiador.armaduraActual() + vidaInicialDelGladiador) 
-                            else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
+  override method atacar(gladiador) = if(self.tieneArmadura(gladiador)) (self.fuerzaDelGladiador() + self.fuerzaDeLasArmas()) - (gladiador.armaduraActual() + vidaInicialDelGladiador) 
+                            else (self.fuerzaDelGladiador() + self.fuerzaDeLasArmas()) - vidaInicialDelGladiador
 }
