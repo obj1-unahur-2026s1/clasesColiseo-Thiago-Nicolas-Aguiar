@@ -1,4 +1,5 @@
 import armas.*
+import grupos.*
 
 class Gladiador {
   var property vidaInicialDelGladiador = 100
@@ -12,6 +13,8 @@ class Gladiador {
     gladiador.atacar(self)
     }
   method defensaDelGladiador() 
+
+  method crearGrupoCon(otroGladiador)
 }
 class Mirmillon inherits Gladiador {
   var armaInicial
@@ -34,6 +37,14 @@ class Mirmillon inherits Gladiador {
   override method atacar(gladiador) = if(self.tieneArmadura(gladiador)) (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - (gladiador.armaduraActual() + vidaInicialDelGladiador) 
                             else (self.fuerzaDelGladiador() + self.armaActual().dañoDeAtaque()) - vidaInicialDelGladiador
     override method defensaDelGladiador() = self.armaduraActual() + self.destrezaDelGladiador()
+
+    override method crearGrupoCon(gladiador) {
+        const nuevoGrupo = new Grupo(nombre = "Mirmillolandia")
+        nuevoGrupo.agregarMiembro(self)
+        nuevoGrupo.agregarMiembro(gladiador)
+        return nuevoGrupo
+    }
+    // override method crearGrupoCon(gladiador) = new Grupo(nombre = "Mirmillolandia" listaDeMiembros #= {self, gladiador}) // Pensar
 }
 class Dimachaerus inherits Gladiador{
 
