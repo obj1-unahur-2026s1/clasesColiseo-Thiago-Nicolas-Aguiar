@@ -1,11 +1,13 @@
 class ArmaDeFilo {
-  var longitudDeArma
-  var filoDeArma
+  // var longitudDeArma // PENSAR
+  // var filoDeArma
+  // method longitudDelArma(longitud) {longitudDeArma = longitud}
+  // method filoDelArma(filo) {filoDeArma = filo} // PENSAR
+  
+  const longitudDeArma
+  const filoDeArma
 
    method dañoDeArma() = filoDeArma * longitudDeArma
-
-  method longitudDelArma(longitud) {longitudDeArma = longitud}
-  method filoDelArma(filo) {filoDeArma = filo}
 }
 
 class ArmaContundentes  {
