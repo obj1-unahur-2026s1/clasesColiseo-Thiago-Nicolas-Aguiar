@@ -1,32 +1,24 @@
-class Armas {
-  method dañoDeAtaque()
-  method dañoDeArma()
-}
-
-class ArmasDeFilo inherits Armas{
+class ArmasDeFilo {
   var longitudDeArma
   var filoDeArma
 
-  override method dañoDeAtaque() = self.dañoDeArma()
-  
-  override method dañoDeArma() = filoDeArma + longitudDeArma
+   method dañoDeArma() = filoDeArma * longitudDeArma
 
   method longitudDelArma(longitud) {longitudDeArma = longitud}
   method filoDelArma(filo) {filoDeArma = filo}
 }
 
-class ArmasContundentes inherits Armas{
+class ArmasContundentes  {
   var pesoDeArma
   method pesoDelArma(pesoArma) {pesoDeArma = pesoArma}
-  override method dañoDeAtaque() = pesoDeArma
 }
 
-object casco { // Pensar
+object casco {
   method armaduraDada() = 10
 }
-// object escudo { // Pensar
-//   method destrezaDada() = 5 + gladiador.destreza() * 0.1 
-// }
+object escudo { 
+  method destrezaDada(gladiador) = 5 + gladiador.destreza() * 0.1 
+}
 
 class Gladiadores {
   var property vidaInicialDelGladiador = 100
